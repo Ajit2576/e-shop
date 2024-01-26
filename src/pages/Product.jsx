@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { useProductContext } from '../context/productcontex';
 import PageNavigation from '../components/PageNavigation';
 import MyImage from '../components/MyImage'
-// import Star from '../components/Star'
+import Star from '../components/Star'
 import FormatPrice from '../helper/FormatPrice'
-// import { TbTruckDelivery, TbReplace } from "react-icons/tb";
-// import { MdSecurity } from "react-icons/md"; 
+import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import { MdSecurity } from "react-icons/md"; 
 import loading from '../assets/loading.gif';
 import {Container} from '../styles/Container'
 
@@ -22,7 +22,6 @@ function Product() {
 
   useEffect(() =>{
     getProduct(api);
-
   }, []);
 
   if (isProductLoading) {
@@ -43,55 +42,55 @@ function Product() {
           </div>
 
           <div className="product-data">
-            {/* <h2>{name}</h2> */}
-            {/* <Star stars={stars} reviews={reviews} /> */}
+            <h2>{name}</h2>
+            <Star stars={stars} reviews={reviews} />
 
-            {/* <p className="product-data-price">
+            <p className="product-data-price">
               MRP:
               <del>
                 <FormatPrice price={price + 250000} />
               </del>
-            </p> */}
+            </p>
             
             <p className="product-data-price product-data-real-price">
-              {/* Deal of the Day: <FormatPrice price={price} /> */}
+              Deal of the Day: <FormatPrice price={price} />
             </p>
-            {/* <p>{description}</p> */}
+            <p>{description}</p>
             <div className="product-data-warranty">
-              {/* <div className="product-warranty-data">
+              <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
                 <p>Free Delivery</p>
-              </div> */}
+              </div>
 
-              {/* <div className="product-warranty-data">
+              <div className="product-warranty-data">
                 <TbReplace className="warranty-icon" />
                 <p>30 Days Replacement</p>
-              </div> */}
+              </div>
 
-              {/* <div className="product-warranty-data">
+              <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
                 <p>Delivered </p>
-              </div> */}
+              </div>
 
-              {/* <div className="product-warranty-data">
+              <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
                 <p>2 Year Warranty </p>
-              </div> */}
+              </div>
             </div>
 
-            {/* <div className="product-data-info">
+            <div className="product-data-info">
               <p>
                 Available:
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
               </p>
               <p>
-                ID : <span> {id} </span>
+                ID : <span> {_id} </span>
               </p>
               <p>
                 Brand :<span> {company} </span>
               </p>
-            </div> */}
-            {/* <hr /> */}
+            </div>
+            <hr />
             {/* {stock > 0 && <AddToCart product={product}/>} */}
           </div>
         </div>

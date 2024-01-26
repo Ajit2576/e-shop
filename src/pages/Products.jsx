@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-// import ProductList from '../components/ProductList';
+import FilterSection from '../components/FilterSection';
+import Sort from '../components/Sort'
+import ProductList from '../components/ProductList'
 
 function Products() {
   return (
@@ -8,12 +10,12 @@ function Products() {
       <h3>Poducts</h3>
       <div className="container grid grid-filter-column">
         <div>
-          {/* <FilterSection /> */}
+          <FilterSection />
         </div>
 
         <section className="product-view--sort">
           <div className="sort-filter">
-            {/* <Sort /> */}
+            <Sort />
           </div>
           <div className="main-product">
             {/* <ProductList /> */}

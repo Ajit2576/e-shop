@@ -33,7 +33,7 @@ function NewProduct() {
      let bodyContent = JSON.stringify({
        "name": formdata.name,
        "price": formdata.price,
-       "image": "https://pixabay.com/photos/marriage-bridal-wedding-shoes-636018/",
+       "image": image.image,
        "category": formdata.category,
        "descriptions": formdata.productDescription,
        "featured": formdata.featureProduct

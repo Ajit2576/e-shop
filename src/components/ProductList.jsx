@@ -1,6 +1,6 @@
 import React from "react";
-import GridView from "./GridView";
-import ListView from "./ListView";
+import GridView from '../components/GridView';
+import ListView from '../components/ListView';
 
 const ProductList = () => {
 
