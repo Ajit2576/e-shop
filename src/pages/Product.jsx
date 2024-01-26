@@ -18,7 +18,7 @@ function Product() {
   const params = useParams()
   
   const api = `http://localhost:8000/api/prodcuts/get/${params.id}`;
-  const { _id, name, company, price, description, category, stock, stars, reviews, image } = product;
+  const { _id, name, company, price, descriptions, category, stock, stars, reviews, image } = product;
 
   useEffect(() =>{
     getProduct(api);
@@ -55,7 +55,7 @@ function Product() {
             <p className="product-data-price product-data-real-price">
               Deal of the Day: <FormatPrice price={price} />
             </p>
-            <p>{description}</p>
+            <p>{descriptions}</p>
             <div className="product-data-warranty">
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />

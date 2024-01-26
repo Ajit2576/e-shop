@@ -7,7 +7,6 @@ import ProductList from '../components/ProductList'
 function Products() {
   return (
     <Wrapper>
-      <h3>Poducts</h3>
       <div className="container grid grid-filter-column">
         <div>
           <FilterSection />
@@ -18,7 +17,7 @@ function Products() {
             <Sort />
           </div>
           <div className="main-product">
-            {/* <ProductList /> */}
+            <ProductList />
           </div>
         </section>
       </div>
