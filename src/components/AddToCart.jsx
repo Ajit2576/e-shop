@@ -10,7 +10,6 @@ const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
 
   const { id, colors, stock } = product;
-
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -41,14 +40,13 @@ const AddToCart = ({ product }) => {
         </p>
       </div>
 
-      {/* add to cart  */}
       <CartAmountToggle
         amount={amount}
         setDecrease={setDecrease}
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
+      <NavLink to="/cart" onClick={() => addToCart(id, colors, amount, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>

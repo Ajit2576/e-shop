@@ -1,5 +1,6 @@
 const filterReducer = (state, action) => {
   switch (action.type) {
+
     case "LOAD_FILTER_PRODUCTS":
       let priceArr = action.payload.map((curElem) => curElem.price);
       let maxPrice = Math.max(...priceArr);
@@ -32,10 +33,8 @@ const filterReducer = (state, action) => {
 
     case "SORTING_PRODUCTS":
       let newSortData;
-
       const { filter_products, sorting_value } = state;
       let tempSortProduct = [...filter_products];
-
       const sortingProducts = (a, b) => {
         if (sorting_value === "lowest") {
           return a.price - b.price;

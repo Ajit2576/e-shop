@@ -5,71 +5,71 @@ import { Button } from '../styles/Button'
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 function Footer() {
-    return (
-        <Wrapper>
-            <section className="contact-short">
-                <div className="grid grid-two-column">
-                    <div>
-                        <h3>Ready to get started?</h3>
-                        <h3>Talk to us today</h3>
-                    </div>
-                    <div>
-                        <Button>
-                            <NavLink to="/contact">Get Started</NavLink>
-                        </Button>
-                    </div>
-                </div>
-            </section>
+  return (
+    <Wrapper>
+      <section className="contact-short">
+        <div className="grid grid-two-column">
+          <div>
+            <h3>Ready to get started?</h3>
+            <h3>Talk to us today</h3>
+          </div>
+          <div>
+            <Button>
+              <NavLink to="/contact">Get Started</NavLink>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-            <footer>
-                <div className="container grid grid-four-column">
-                    <div className="footer-about">
-                        <h3>Singh's Footwear</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
+      <footer>
+        <div className="container grid grid-four-column">
+          <div className="footer-about">
+            <h3>Singh's Footwear</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
 
-                    <div className="footer-subscribe">
-                        <h3>Subscribe to get important updates</h3>
-                        <form action="#">
-                            <input type="email" placeholder='your e-mail' />
-                            <input type="submit" value="subscribe" />
-                        </form>
-                    </div>
+          <div className="footer-subscribe">
+            <h3>Subscribe to get important updates</h3>
+            <form action="#">
+              <input type="email" placeholder='your e-mail' />
+              <input type="submit" value="subscribe" />
+            </form>
+          </div>
 
-                    <div className="footer-social">
-                        <h3>follow us</h3>
-                        <div className="footer-social--icons">
-                            <div>
-                                <FaInstagram className='icons' />
-                            </div>
-                            <div>
-                                <FaFacebookF className='icons' />
-                            </div>
-                            <div>
-                                <FaLinkedinIn className='icons' />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-contact">
-                        <h3>Call Us</h3>
-                        <h3><a href="tel:9999999999">+91 9999999999</a></h3>
-                    </div>
-                </div>
-                <div className="footer-bottom--section">
-                    <hr />
-                    <div className="container grid grid-two-column">
-                        <p>
-                            @{new Date().getFullYear()} Singh's Footwear. All Right Reserved
-                        </p>
-                        <div>
-                            <p>PRIVACY POLICY</p>
-                            <p>TERM & CONDITIONS</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </Wrapper>
-    )
+          <div className="footer-social">
+            <h3>follow us</h3>
+            <div className="footer-social--icons">
+              <div>
+                <FaInstagram className='icons' />
+              </div>
+              <div>
+                <FaFacebookF className='icons' />
+              </div>
+              <div>
+                <FaLinkedinIn className='icons' />
+              </div>
+            </div>
+          </div>
+          <div className="footer-contact">
+            <h3>Call Us</h3>
+            <h3><a href="tel:9999999999">+91 9999999999</a></h3>
+          </div>
+        </div>
+        <div className="footer-bottom--section">
+          <hr />
+          <div className="container grid grid-two-column">
+            <p>
+              @{new Date().getFullYear()} Singh's Footwear. All Right Reserved
+            </p>
+            <div>
+              <p>PRIVACY POLICY</p>
+              <p>TERM & CONDITIONS</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

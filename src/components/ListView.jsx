@@ -1,10 +1,10 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import FormatPrice from "../helper/FormatPrice";
 import { Button } from "../styles/Button";
 
 const ListView = ({ products }) => {
-  console.log(products);
   return (
     <Wrapper className="section">
       <div className="container grid">

@@ -11,7 +11,7 @@ function Login() {
                         <h3>Login</h3>
                     </div>
                     <div>
-                        <form action="" style={{display:'flex', flexDirection:'column'}}>
+                        <form action="" style={{ display: 'flex', flexDirection: 'column' }}>
                             <input type="email" name="email" id="email" placeholder='Enter Your Email' />
                             <input type="password" name="password" id="password" placeholder='Enter your Password' />
                         </form>

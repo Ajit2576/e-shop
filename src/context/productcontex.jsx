@@ -52,7 +52,6 @@ const AppProvider = ({ children }) => {
   );
 };
 
-
 const useProductContext = () => {
   return useContext(AppContext);
 };

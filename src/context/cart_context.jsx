@@ -4,16 +4,13 @@ import reducer from "../reducer/cartReducer";
 const CartContext = createContext();
 
 const getLocalCartData = () => {
-  let localCartData = localStorage.getItem("thapaCart");
-  if (localCartData === []) {
-    return [];
-  } else {
-    return JSON.parse(localCartData);
-  }
+  let localCartData = localStorage.getItem("myCart");
+  const parsedData = JSON.parse(localCartData);
+  if (!Array.isArray(parsedData)) [];
+  return parsedData
 };
 
 const initialState = {
-  // cart: [],
   cart: getLocalCartData(),
   total_item: "",
   total_price: "",
@@ -28,7 +25,6 @@ const CartProvider = ({ children }) => {
   };
 
   // increment and decrement the product
-
   const setDecrease = (id) => {
     dispatch({ type: "SET_DECREMENT", payload: id });
   };
@@ -48,12 +44,10 @@ const CartProvider = ({ children }) => {
   };
 
   // to add the data in localStorage
-  // get vs set
-
   useEffect(() => {
     dispatch({ type: "CART_TOTAL_ITEM" });
     dispatch({ type: "CART_TOTAL_PRICE" });
-    localStorage.setItem("thapaCart", JSON.stringify(state.cart));
+    localStorage.setItem("myCart", JSON.stringify(state.cart));
   }, [state.cart]);
 
   return (

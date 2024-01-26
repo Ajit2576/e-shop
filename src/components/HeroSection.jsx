@@ -1,31 +1,31 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
-import {Button} from '../styles/Button'
+import { Button } from '../styles/Button'
 import homeImg from '../assets/home.png'
 
-function HeroSection({myData}) {
-
-    const {name} = myData;
+function HeroSection({ myData }) {
+  const { name } = myData;
 
   return (
     <Wrapper>
-        <div className="container">
-            <div className="grid grid-two-column">
-                <div className="hero-section-data">
-                    <p className='intro-data'>Welcome to</p>
-                    <h1>{name}</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum itaque ad aspernatur explicabo veniam voluptas commodi unde, dignissimos esse expedita!</p>
-                    <NavLink>
-                        <Button>show now</Button>
-                    </NavLink>
-                </div>
-                <div className="hero-section-image">
-                    <figure>
-                        <img src={homeImg} alt="Main" className="img-style"/>
-                    </figure>
-                </div>
-            </div>
+      <div className="container">
+        <div className="grid grid-two-column">
+          <div className="hero-section-data">
+            <p className='intro-data'>Welcome to</p>
+            <h1>{name}</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum itaque ad aspernatur explicabo veniam voluptas commodi unde, dignissimos esse expedita!</p>
+            <NavLink>
+              <Button>show now</Button>
+            </NavLink>
+          </div>
+          <div className="hero-section-image">
+            <figure>
+              <img src={homeImg} alt="Main" className="img-style" />
+            </figure>
+          </div>
         </div>
+      </div>
     </Wrapper>
   )
 }

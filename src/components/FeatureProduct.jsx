@@ -1,23 +1,24 @@
+import React from 'react';
 import { useProductContext } from '../context/productcontex'
 import Product from './Product';
 import styled from 'styled-components';
 
 function FeatureProduct() {
-    const { featureProducts } = useProductContext();
-    
-    return (
-        <Wrapper className="section">
-            <div className="container">
-                <div className="intro-data">Check Now!</div>
-                <div className="common-heading">Our Feature Services</div>
-                <div className="grid grid-three-column">
-                    {featureProducts.map((curElem, i) => {
-                        return <Product key={curElem._id} {...curElem} />;
-                    })}
-                </div>
-            </div>
-        </Wrapper>
-    )
+  const { featureProducts } = useProductContext();
+
+  return (
+    <Wrapper className="section">
+      <div className="container">
+        <div className="intro-data">Check Now!</div>
+        <div className="common-heading">Our Feature Services</div>
+        <div className="grid grid-three-column">
+          {featureProducts.map((curElem, i) => {
+            return <Product key={curElem._id} {...curElem} />;
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

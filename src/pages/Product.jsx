@@ -3,24 +3,23 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components'
 import { useProductContext } from '../context/productcontex';
 import PageNavigation from '../components/PageNavigation';
-import MyImage from '../components/MyImage'
 import Star from '../components/Star'
 import FormatPrice from '../helper/FormatPrice'
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
-import { MdSecurity } from "react-icons/md"; 
+import { MdSecurity } from "react-icons/md";
 import loading from '../assets/loading.gif';
-import {Container} from '../styles/Container'
-
+import { Container } from '../styles/Container';
+import AddToCart from '../components/AddToCart';
 
 
 function Product() {
-  const {getProduct,  isProductLoading, product} = useProductContext();
+  const { getProduct, isProductLoading, product } = useProductContext();
   const params = useParams()
-  
+
   const api = `http://localhost:8000/api/prodcuts/get/${params.id}`;
   const { _id, name, company, price, descriptions, category, stock, stars, reviews, image } = product;
 
-  useEffect(() =>{
+  useEffect(() => {
     getProduct(api);
   }, []);
 
@@ -38,7 +37,7 @@ function Product() {
       <Container className="container">
         <div className="grid grid-two-column">
           <div className="product_images">
-            {/* <MyImage imgs={image} /> */}
+            <img src={image} alt={name} />
           </div>
 
           <div className="product-data">
@@ -51,7 +50,7 @@ function Product() {
                 <FormatPrice price={price + 250000} />
               </del>
             </p>
-            
+
             <p className="product-data-price product-data-real-price">
               Deal of the Day: <FormatPrice price={price} />
             </p>
@@ -84,14 +83,11 @@ function Product() {
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
               </p>
               <p>
-                ID : <span> {_id} </span>
-              </p>
-              <p>
                 Brand :<span> {company} </span>
               </p>
             </div>
             <hr />
-            {/* {stock > 0 && <AddToCart product={product}/>} */}
+            {stock > 0 && <AddToCart product={product} />}
           </div>
         </div>
       </Container>

@@ -25,14 +25,16 @@ function Nav() {
             <NavLink to="/contact" className="navbar-link" onClick={() => setMenuIcon(false)}>Contact</NavLink>
           </li>
           <li>
+            <NavLink to='/login'>
+              <Button className='login-btn'>Login</Button>
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/cart" className="navbar-link cart-total--link">
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item">0</span>
             </NavLink>
           </li>
-          <NavLink to='/login'>
-            <Button className='login-btn'>Login</Button>
-          </NavLink>
         </ul>
         <div className="mobile-navbar-btn">
           <CgMenu name="menu-outline" className="mobile-nav-icon" onClick={() => setMenuIcon(true)} />

@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import logo from '../assets/logo.png'
@@ -9,7 +10,7 @@ function Header() {
 
     return (
         <MainHeader>
-            <NavLink to={ !location.pathname.includes("admin") ? "/" : "/admin"}>
+            <NavLink to={!location.pathname.includes("admin") ? "/" : "/admin"}>
                 <img className='logo' src={logo} alt="logo" />
             </NavLink>
             {!location.pathname.includes("admin") ? <Nav /> : <Button>LOGOUT</Button>}
