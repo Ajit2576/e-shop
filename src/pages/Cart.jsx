@@ -5,6 +5,7 @@ import CartItem from "../components/CartItem";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
 import FormatPrice from "../helper/FormatPrice";
+import emptyCart from '../assets/empty.png';
 
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
@@ -12,7 +13,12 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <EmptyDiv>
-        <h3>No Cart in Item </h3>
+        <div style={{ position: 'relative' }}>
+          <img src={emptyCart} alt="cart" />
+        </div>
+        <div style={{ position: 'absolute' }}>
+          <h3>Empty Cart!</h3>
+        </div>
       </EmptyDiv>
     );
   }
@@ -75,11 +81,20 @@ const EmptyDiv = styled.div`
   display: grid;
   place-items: center;
   height: 50vh;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: center;
 
   h3 {
-    font-size: 4.2rem;
+    font-size: 4rem;
     text-transform: capitalize;
-    font-weight: 300;
+    font-weight: 500;
+    text-shadow: 0.5rem 0.5rem 0.9rem rgb(195, 194, 194);
+  }
+
+  img {
+    width: 30vw;
+    opacity: 15%;
   }
 `;
 
