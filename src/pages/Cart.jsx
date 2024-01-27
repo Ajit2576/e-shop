@@ -72,6 +72,9 @@ const Cart = () => {
             </div>
           </div>
         </div>
+        <div style={{float:'right'}}>
+          <Button style={{ padding: "1.4rem 6.8rem"}} onClick={(() => {alert("place Order")})}>Place Order</Button>
+        </div>
       </div>
     </Wrapper>
   );

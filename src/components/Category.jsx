@@ -28,14 +28,12 @@ function Category() {
       <div className="container">
         <div className="common-heading">Shop by Category</div>
         <div className="grid grid-three-column">
-
           {arr.map((item, index) => (
             <div className="card" key={index}>
               <figure>
                 <img src={item.image} alt={item.name} />
                 <figcaption>{item.category}</figcaption>
               </figure>
-
               <div className="card-data">
                 <div className="card-data-flex">
                   <h3>{item.name}</h3>

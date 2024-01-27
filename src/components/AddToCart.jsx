@@ -65,10 +65,13 @@ const Wrapper = styled.section`
     background-color: #000;
     border-radius: 50%;
     margin-left: 1rem;
-    border: none;
+    border: 1px solid;
     outline: none;
     opacity: 0.5;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       opacity: 1;

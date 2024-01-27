@@ -17,7 +17,7 @@ function Product() {
   const params = useParams()
 
   const api = `http://localhost:8000/api/prodcuts/get/${params.id}`;
-  const { _id, name, company, price, descriptions, category, stock, stars, reviews, image } = product;
+  const { name, company, price, descriptions, stock, stars, reviews, image } = product;
 
   useEffect(() => {
     getProduct(api);
@@ -47,7 +47,7 @@ function Product() {
             <p className="product-data-price">
               MRP:
               <del>
-                <FormatPrice price={price + 250000} />
+                <FormatPrice price={price + 2000} />
               </del>
             </p>
 
@@ -83,7 +83,7 @@ function Product() {
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
               </p>
               <p>
-                Brand :<span> {company} </span>
+                Brand: <span> {company} </span>
               </p>
             </div>
             <hr />
