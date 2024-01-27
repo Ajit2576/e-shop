@@ -55,7 +55,7 @@ const Wrapper = styled.section`
   .services-2,
   .services-3 {
     width: auto;
-    height: 30rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,9 +97,9 @@ const Wrapper = styled.section`
   }
 
   .icon {
-    width: 8rem;
-    height: 8rem;
-    padding: 2rem;
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
     border-radius: 50%;
     background-color: #fff;
     color: #5138ee;

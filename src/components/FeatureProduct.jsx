@@ -11,7 +11,7 @@ function FeatureProduct() {
       <div className="container">
         <div className="intro-data">Check Now!</div>
         <div className="common-heading">Our Feature Services</div>
-        <div className="grid grid-three-column">
+        <div className="display-data">
           {featureProducts.map((curElem, i) => {
             return <Product key={curElem._id} {...curElem} />;
           })}
@@ -29,6 +29,12 @@ const Wrapper = styled.section`
     max-width: 120rem;
   }
 
+  .display-data{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
   figure {
     width: auto;
     display: flex;
@@ -42,7 +48,7 @@ const Wrapper = styled.section`
       transform: scale(1.2);
     }
     img {
-      max-width: 90%;
+      max-width: 80%;
       margin-top: 1.5rem;
       height: 15rem;
       transition: all 0.2s linear;
@@ -64,9 +70,10 @@ const Wrapper = styled.section`
   .card {
     background-color: #fff;
     border-radius: 1rem;
+    width: 18vw;
 
     .card-data {
-      padding: 0 2rem;
+      padding: 0.5rem 2rem;
     }
 
     .card-data-flex {
@@ -104,6 +111,24 @@ const Wrapper = styled.section`
         color: rgb(98 84 243);
         font-size: 1.4rem;
       }
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    .display-data{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+      width: 28vw;
+    }
+  }
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .display-data{
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card{
+      width: 85vw;
     }
   }
 `;
