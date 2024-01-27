@@ -14,9 +14,12 @@ function HeroSection({ myData }) {
           <div className="hero-section-data">
             <p className='intro-data'>Welcome to</p>
             <h1>{name}</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum itaque ad aspernatur explicabo veniam voluptas commodi unde, dignissimos esse expedita!</p>
-            <NavLink>
-              <Button>show now</Button>
+            <p>Footwear to last you a lifetime.
+              Bring power to your steps.
+              Your feet will never look the same again.
+              Go faster, go stronger, never stop.</p>
+            <NavLink to='/products'>
+              <Button>shop now</Button>
             </NavLink>
           </div>
           <div className="hero-section-image">

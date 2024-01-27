@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import mens from '../assets/Category/mens.jpg'
-import womens from '../assets/Category/womens.jpg'
-import kids from '../assets/Category/kids.jpg'
+import mens from '../assets/Category/mens.jpg';
+import womens from '../assets/Category/womens.jpg';
+import kids from '../assets/Category/kids.jpg';
 
 function Category() {
 
