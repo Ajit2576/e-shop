@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import mens from '../assets/Category/mens.jpg';
 import womens from '../assets/Category/womens.jpg';
 import kids from '../assets/Category/kids.jpg';
+import { NavLink } from 'react-router-dom';
 
 function Category() {
 
@@ -12,6 +13,7 @@ function Category() {
         <div className="grid grid-three-column">
           
             <div className="card" >
+              <NavLink to='/products'>
               <figure>
                 <img src={mens} alt="mens" />
                 <figcaption>mens</figcaption>
@@ -21,9 +23,11 @@ function Category() {
                   <h3>mens</h3>
                 </div>
               </div>
+              </NavLink>
             </div>
 
             <div className="card" >
+              <NavLink to='/products'>
               <figure>
                 <img src={womens} alt="womens" />
                 <figcaption>womens</figcaption>
@@ -33,9 +37,11 @@ function Category() {
                   <h3>womens</h3>
                 </div>
               </div>
+              </NavLink>
             </div>
 
             <div className="card" >
+            <NavLink to='/products'>
               <figure>
                 <img src={kids} alt="kids" />
                 <figcaption>kids</figcaption>
@@ -45,6 +51,7 @@ function Category() {
                   <h3>kids</h3>
                 </div>
               </div>
+              </NavLink>
             </div>
         
         </div>
