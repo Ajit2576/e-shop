@@ -14,6 +14,8 @@ const AddToCart = ({ product }) => {
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
+  const [selectSize, setSelectSize] = useState(size[0])
+
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
   };
@@ -21,6 +23,10 @@ const AddToCart = ({ product }) => {
   const setIncrease = () => {
     amount < stock ? setAmount(amount + 1) : setAmount(stock);
   };
+
+  const handleChange = (e) => {
+    setSelectSize(e.target.value)
+  }
 
   return (
     <Wrapper>
@@ -44,10 +50,10 @@ const AddToCart = ({ product }) => {
       <div className="sizes">
         <p>
           Size:
-          <select>
+          <select onChange={handleChange}>
           {size.map((curSize, index) =>{
             return(
-              <option key={index}> {curSize} </option>
+              <option value={curSize} key={index} > {curSize} </option>
             )
           })}
           </select>
@@ -60,7 +66,7 @@ const AddToCart = ({ product }) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
+      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, selectSize, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>

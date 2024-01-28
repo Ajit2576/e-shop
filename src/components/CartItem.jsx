@@ -4,7 +4,7 @@ import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
-const CartItem = ({ id, name, image, color, price, amount }) => {
+const CartItem = ({ id, name, image, color, price, amount, selectSize }) => {
   const { removeItem, setDecrease, setIncrement } = useCartContext();
   
   return (
@@ -26,7 +26,7 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
           <div className="color-div">
             <p>Size:</p>
             <div className="size-font">
-              
+              {selectSize}
             </div>
           </div>
         </div>
