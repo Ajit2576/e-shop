@@ -11,7 +11,6 @@ import { ThemeProvider } from 'styled-components'
 import {GlobalStyle} from '../src/styles/GlobalStyle'
 import Footer from './components/Footer'
 import RoutesComp from './admin/Routes'
-import Login from './pages/Login'
 import Cart from './pages/Cart'
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/products' element={<Products />} />
           <Route path='/product/:id' element={<Product />} />
-          <Route path='/login' element={<Login/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<Error />} />
           <Route path='/admin/*' element={<RoutesComp/>} />

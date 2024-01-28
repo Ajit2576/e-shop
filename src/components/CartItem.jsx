@@ -7,6 +7,7 @@ import { useCartContext } from "../context/cart_context";
 const CartItem = ({ id, name, image, color, price, amount }) => {
   const { removeItem, setDecrease, setIncrement } = useCartContext();
 
+  
   return (
     <div className="cart_heading grid grid-five-column">
       <div className="cart-image--name">

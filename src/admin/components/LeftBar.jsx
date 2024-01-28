@@ -26,7 +26,6 @@ function LeftBar() {
 const Leftbar = styled.section`
     background-color: ${({ theme }) => theme.colors.bg};
     padding: 5rem 0;
-    /* height: calc(100vh - 10rem); */
     width: 15vw;
     
         .head{
@@ -36,6 +35,10 @@ const Leftbar = styled.section`
             justify-content: start;
             gap: 2rem;
         }
+
+@media (max-width: ${({ theme }) => theme.media.mobile}) {
+    width: 30vw;
+}
 `;
 
 export default LeftBar

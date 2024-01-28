@@ -5,42 +5,48 @@ import kids from '../assets/Category/kids.jpg';
 
 function Category() {
 
-  const arr = [
-    {
-      image: mens,
-      name: 'Mens',
-      category: 'Mens'
-    },
-    {
-      image: womens,
-      name: 'Womens',
-      category: 'Womens'
-    },
-    {
-      image: kids,
-      name: 'Kids',
-      category: 'Kids'
-    }
-  ]
-
   return (
     <Wrapper className="section">
       <div className="container">
         <div className="common-heading">Shop by Category</div>
         <div className="grid grid-three-column">
-          {arr.map((item, index) => (
-            <div className="card" key={index}>
+          
+            <div className="card" >
               <figure>
-                <img src={item.image} alt={item.name} />
-                <figcaption>{item.category}</figcaption>
+                <img src={mens} alt="mens" />
+                <figcaption>mens</figcaption>
               </figure>
               <div className="card-data">
                 <div className="card-data-flex">
-                  <h3>{item.name}</h3>
+                  <h3>mens</h3>
                 </div>
               </div>
             </div>
-          ))}
+
+            <div className="card" >
+              <figure>
+                <img src={womens} alt="womens" />
+                <figcaption>womens</figcaption>
+              </figure>
+              <div className="card-data">
+                <div className="card-data-flex">
+                  <h3>womens</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="card" >
+              <figure>
+                <img src={kids} alt="kids" />
+                <figcaption>kids</figcaption>
+              </figure>
+              <div className="card-data">
+                <div className="card-data-flex">
+                  <h3>kids</h3>
+                </div>
+              </div>
+            </div>
+        
         </div>
       </div>
     </Wrapper>

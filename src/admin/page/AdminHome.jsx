@@ -46,6 +46,17 @@ const AdminMain = styled.section`
             padding: 2rem;
         }
     }
+@media (max-width: ${({ theme }) => theme.media.tab}) {
+    
+}
+
+@media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .dashlist{
+        grid-template-columns: repeat(1, 75vw);
+        grid-template-rows: repeat(4, 30vh);
+    }
+}
+
 `;
 
 export default AdminHome

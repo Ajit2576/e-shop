@@ -33,7 +33,7 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/login'>
+            <NavLink>
               <Button className='login-btn'>Login</Button>
             </NavLink>
           </li>
@@ -58,7 +58,7 @@ const NavC = styled.nav`
     &:visited {
       display: inline-block;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: 500;
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.black};

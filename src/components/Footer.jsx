@@ -25,11 +25,11 @@ function Footer() {
         <div className="container grid grid-four-column">
           <div className="footer-about">
             <h3>Singh's Footwear</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Your feet will never look the same again. Go faster, go stronger</p>
           </div>
 
           <div className="footer-subscribe">
-            <h3>Subscribe to get important updates</h3>
+            <h3>Subscribe to get new updates</h3>
             <form action="#">
               <input type="email" placeholder='your e-mail' />
               <input type="submit" value="subscribe" />
@@ -97,7 +97,7 @@ const Wrapper = styled.section`
   }
 
   footer {
-    padding: 14rem 0 9rem 0;
+    padding: 14rem 0 1rem 0;
     background-color: ${({ theme }) => theme.colors.footer_bg};
     h3 {
       color: ${({ theme }) => theme.colors.hr};
@@ -126,7 +126,7 @@ const Wrapper = styled.section`
   }
 
   .footer-bottom--section {
-    padding-top: 9rem;
+    padding-top: 5rem;
 
     hr {
       margin-bottom: 2rem;
