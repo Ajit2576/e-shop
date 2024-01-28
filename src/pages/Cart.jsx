@@ -16,9 +16,6 @@ const Cart = () => {
         <div style={{ position: 'relative' }}>
           <img src={emptyCart} alt="cart" />
         </div>
-        <div style={{ position: 'absolute' }}>
-          <h3>Empty Cart!</h3>
-        </div>
       </EmptyDiv>
     );
   }
@@ -170,8 +167,10 @@ const Wrapper = styled.section`
       .color-style {
         width: 1.4rem;
         height: 1.4rem;
-
         border-radius: 50%;
+      }
+      .size-font{
+        font-size: 1.6rem;
       }
     }
   }
