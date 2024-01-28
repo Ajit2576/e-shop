@@ -26,7 +26,6 @@ function Product() {
   if (isProductLoading) {
     return (
       <div className='container'>
-        <h3>Loading...</h3>
         <img src={loading} alt="Loading" />
       </div>
     );

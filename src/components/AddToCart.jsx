@@ -9,7 +9,8 @@ import { useCartContext } from "../context/cart_context";
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
 
-  const { id, colors, stock } = product;
+  const { id, colors, stock, size } = product;
+
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -37,6 +38,19 @@ const AddToCart = ({ product }) => {
               </button>
             );
           })}
+        </p>
+      </div>
+
+      <div className="sizes">
+        <p>
+          Size:
+          <select>
+          {size.map((curSize, index) =>{
+            return(
+              <option key={index}>{curSize}</option>
+            )
+          })}
+          </select>
         </p>
       </div>
 
@@ -85,6 +99,16 @@ const Wrapper = styled.section`
   .checkStyle {
     font-size: 1rem;
     color: #fff;
+  }
+
+  .sizes{
+    margin-top: 1rem;
+    
+    select{
+      margin-left: 1rem;
+      font-size: 1.6rem;
+      padding: 0.2rem 0.5rem;
+    }
   }
 
   /* we can use it as a global one too  */

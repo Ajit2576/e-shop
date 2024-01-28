@@ -10,8 +10,6 @@ import emptyCart from '../assets/empty.png';
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
 
-  console.log(cart);
-
   if (cart.length === 0) {
     return (
       <EmptyDiv>
