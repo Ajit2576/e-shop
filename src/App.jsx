@@ -12,6 +12,7 @@ import {GlobalStyle} from '../src/styles/GlobalStyle'
 import Footer from './components/Footer'
 import RoutesComp from './admin/Routes'
 import Cart from './pages/Cart'
+import Login from './pages/Login'
 
 function App() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/product/:id' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<Login />} />
           <Route path='*' element={<Error />} />
           <Route path='/admin/*' element={<RoutesComp/>} />
         </Routes>

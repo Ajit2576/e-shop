@@ -33,7 +33,7 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink>
+            <NavLink to='/login'>
               <Button className='login-btn'>Login</Button>
             </NavLink>
           </li>

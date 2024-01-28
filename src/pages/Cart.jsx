@@ -71,7 +71,9 @@ const Cart = () => {
           </div>
         </div>
         <div style={{float:'right'}}>
+          <NavLink to='/login'>
           <Button style={{ padding: "1.4rem 6.8rem"}} onClick={(() => {alert("place Order")})}>Place Order</Button>
+          </NavLink>
         </div>
       </div>
     </Wrapper>
