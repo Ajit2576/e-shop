@@ -33,7 +33,7 @@ function Product() {
 
   return (
     <Wrapper>
-      <PageNavigation title={name} />
+      <PageNavigation title={name} className='title' />
       <Container className="container">
         <div className="grid grid-two-column">
           <div className="product_images">
@@ -96,8 +96,18 @@ function Product() {
 }
 
 const Wrapper = styled.section`
+  .kUHfVC {
+    font-size: 2.8rem;
+    height: 0;
+    padding: 3rem 2rem;
+  }
+  .kUHfVC a{
+    font-size: 2.8rem;
+    padding-right: 1rem;
+  }
+
   .container {
-    padding: 9rem 0;
+    padding: 3rem 0;
   }
 
   .product_images {

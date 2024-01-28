@@ -52,7 +52,7 @@ function Footer() {
           </div>
           <div className="footer-contact">
             <h3>Call Us</h3>
-            <h3><a href="tel:9999999999">+91 9999999999</a></h3>
+            <h3><a href="tel:9999999999">+91 9779922576</a></h3>
           </div>
         </div>
         <div className="footer-bottom--section">
