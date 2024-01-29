@@ -4,7 +4,8 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "http://localhost:8000/api/prodcuts/get-all";
+// const API = "http://localhost:8000/api/prodcuts/get-all";
+const API = "https://shop-api-black-nu.vercel.app/api/prodcuts/get-all";
 
 const initialState = {
   isLoading: false,

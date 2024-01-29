@@ -13,7 +13,7 @@ function FeatureProduct() {
         <div className="common-heading">Our Feature Services</div>
         <div className="display-data">
           {featureProducts.map((curElem, i) => {
-            return <Product key={curElem._id} {...curElem} />;
+            return i <= 3 && <Product key={curElem._id} {...curElem} />;
           })}
         </div>
       </div>
