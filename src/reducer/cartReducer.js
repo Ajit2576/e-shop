@@ -2,7 +2,7 @@ const cartReducer = (state, action) => {
 
   if (action.type === "ADD_TO_CART") {
     let { id, color, amount, selectSize, product } = action.payload;
-    let existingProduct = state.cart.find(
+    let existingProduct = state?.cart?.find(
       (curItem) => curItem.id == id + color + selectSize
     );
 
@@ -105,7 +105,7 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === "CART_TOTAL_ITEM") {
-    let updatedItemVal = state.cart.reduce((initialVal, curElem) => {
+    let updatedItemVal = state?.cart?.reduce((initialVal, curElem) => {
       let { amount } = curElem;
 
       initialVal = initialVal + amount;
@@ -119,7 +119,7 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === "CART_TOTAL_PRICE") {
-    let total_price = state.cart.reduce((initialVal, curElem) => {
+    let total_price = state?.cart?.reduce((initialVal, curElem) => {
       let { price, amount } = curElem;
       initialVal = initialVal + price * amount;
       return initialVal;

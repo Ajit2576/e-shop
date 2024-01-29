@@ -11,17 +11,17 @@ function AdminProducts() {
         <h2>Products</h2>
         <div>
           <NavLink to='/admin/new-product'>
-          <Button>New Product</Button>
+            <Button>New Product</Button>
           </NavLink>
         </div>
       </div>
-     
-     <Container>
+
+      <Container>
       <div style={{border:'1px solid'}}>
         <h3>Listed Products</h3>
       </div>
-     </Container>
-
+      </Container>
+      
     </Product>
   )
 }

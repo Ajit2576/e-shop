@@ -9,9 +9,9 @@ import emptyCart from '../assets/empty.png';
 
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
-  console.log(cart);
+  // console.log(cart);
 
-  if (cart.length === 0) {
+  if (cart?.length === 0) {
     return (
       <EmptyDiv>
         <div style={{ position: 'relative' }}>
@@ -33,7 +33,7 @@ const Cart = () => {
         </div>
         <hr />
         <div className="cart-item">
-          {cart.map((curElem) => {
+          {cart?.map((curElem) => {
             return <CartItem key={curElem.id} {...curElem} />
           })}
         </div>
