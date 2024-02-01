@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-// const API = "http://localhost:8000/api/prodcuts/get-all";
+// const API = `http://localhost:8000/api/prodcuts/get-all?page=${page}`;
 const API = "https://shop-api-black-nu.vercel.app/api/prodcuts/get-all";
 
 const initialState = {
@@ -24,7 +24,8 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(url);
       const products = await res.data;
-      dispatch({ type: "SET_API_DATA", payload: products });
+      console.log(products);
+      dispatch({ type: "SET_API_DATA", payload: products.data });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
     }

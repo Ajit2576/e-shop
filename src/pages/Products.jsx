@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FilterSection from '../components/FilterSection';
 import Sort from '../components/Sort'
 import ProductList from '../components/ProductList'
+import { Button } from '../styles/Button';
 
 function Products() {
   return (
@@ -19,6 +20,11 @@ function Products() {
           
           <div className="main-product">
             <ProductList />
+          </div>
+          <div>
+            <Button>Prev</Button>
+            <p>1</p>
+            <Button>next</Button>
           </div>
         </section>
       </div>
