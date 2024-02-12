@@ -16,8 +16,8 @@ function Product() {
   const { getProduct, isProductLoading, product } = useProductContext();
   const params = useParams()
 
-  const api = `http://localhost:8000/api/prodcuts/get/${params.id}`;
-  // const api = `https://shop-api-black-nu.vercel.app/api/prodcuts/get/${params.id}`;
+  // const api = `http://localhost:8000/api/prodcuts/get/${params.id}`;
+  const api = `https://shop-api-black-nu.vercel.app/api/prodcuts/get/${params.id}`;
   const { name, company, price, descriptions, stock, stars, reviews, image } = product;
 
   useEffect(() => {
