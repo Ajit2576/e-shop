@@ -2,82 +2,84 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from '../../styles/Button'
 import axios from 'axios';
-import base64 from 'base-64'
-import { name } from '@cloudinary/url-gen/actions/namedTransformation';
 
 function NewProduct() {
   let inlData = {
-    name:'',
-    price:'',
-    discountPrice:'',
-    productDescription:'',
-    category:'',
-    featureProduct:'',
-    company:'',
-    stock:'',
-    productImage:'',
+    name: '',
+    price: '',
+    discountPrice: '',
+    productDescription: '',
+    category: '',
+    featureProduct: '',
+    company: '',
+    stock: '',
+    productImage: '',
+    size: '',
+    color: '',
   }
 
   const [formdata, setFormData] = useState(inlData);
-  const [image, setImage] = useState(null)
+  // const [image, setImage] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     let headersList = {
       "Accept": "*/*",
-      "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-      "Content-Type": "application/json" 
-     }
-     
-     let bodyContent = JSON.stringify({
-       "name": formdata.name,
-       "price": formdata.price,
-       "image": image.image,
-       "category": formdata.category,
-       "descriptions": formdata.productDescription,
-       "featured": formdata.featureProduct
-     });
-     
-     let reqOptions = {
-       url: "http://localhost:8000/api/prodcuts/create",
-       method: "POST",
-       headers: headersList,
-       data: bodyContent,
-     }
+      "Content-Type": "application/json"
+    }
+
+    let bodyContent = JSON.stringify({
+      "name": formdata.name,
+      "price": formdata.price,
+      //  "image": image.image,
+      "category": formdata.category,
+      "descriptions": formdata.productDescription,
+      "featured": formdata.featureProduct,
+      "stock": formdata.stock,
+      "company": formdata.company,
+      "colors": formdata.color,
+      "size": formdata.size
+    });
+
+    let reqOptions = {
+      url: "http://localhost:8000/api/prodcuts/create",
+      method: "POST",
+      headers: headersList,
+      data: bodyContent,
+    }
 
     try {
       let res = await axios.request(reqOptions)
       console.log(res.data);
     } catch (error) {
-      console.log();
+      console.log(error);
     }
   }
 
   const handleChange = (e) => {
-    setFormData({...formdata, [e.target.id]:e.target.value})
+    setFormData({ ...formdata, [e.target.id]: e.target.value })
   }
-  console.log( formdata);
 
   return (
     <NewWrapp>
       <h2 className='h2h'>New Product</h2>
       <div className="new-pro-box">
         <div>
-          <form action=""  className='data-input' onSubmit={handleSubmit}>
+          <form action="" className='data-input' onSubmit={handleSubmit}>
             <div className='form-arg'>
               <label htmlFor="name">Enter Product Name: </label>
-              <input type="text" name="" id="name" required onChange={handleChange} />
+              <input className='input' type="text" name="" id="name" required onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
               <label htmlFor="price">Enter Product Price: </label>
-              <input type="number" name="" id="price" required onChange={handleChange} />
+              <input className='input' type="number" name="" id="price" required onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
               <label htmlFor="discountPrice">Discount Percentage: </label>
-              <input type="number" name="" id="discountPrice" onChange={handleChange}/>
+              <input className='input' type="number" name="" id="discountPrice" onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
@@ -115,12 +117,28 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="stock">Stocks: </label>
-              <input type="number" name="" id="stock" onChange={handleChange}/>
+              <input className='input' type="number" name="" id="stock" onChange={handleChange} />
+            </div>
+
+            <div className='form-arg checkbox'>
+              <label htmlFor="colors">Colors: </label>
+              <input className='input' type="text" name="" id="colors" onChange={handleChange} />
+            </div>
+
+            <div className='form-size'>
+              <label htmlFor="size">Sizes: </label>
+              <div className='size-edit'>
+                6<input type="checkbox" name="" id="size" onChange={handleChange} />
+                7<input type="checkbox" name="" id="size" onChange={handleChange} />
+                8<input type="checkbox" name="" id="size" onChange={handleChange} />
+                9<input type="checkbox" name="" id="size" onChange={handleChange} />
+                10<input type="checkbox" name="" id="size" onChange={handleChange} />
+              </div>
             </div>
 
             <div className='form-arg upl-img'>
               <label htmlFor="productImage">Upload Product Image: </label>
-              <input type="file" name="" id="productImage" onChange={e=>setImage(e.target.files)}/>
+              <input className='input' type="file" name="" id="productImage" onChange={e => setImage(e.target.files)} />
             </div>
 
             <Button style={{ borderRadius: '1rem' }} type='submit'>add product</Button>
@@ -169,7 +187,7 @@ const NewWrapp = styled.section`
         border-radius: 1rem;
       }
 
-      input, textarea{
+      .input, textarea{
         width: 25vw;
         border-radius: 1rem;
         margin-left: 5rem;
@@ -180,9 +198,24 @@ const NewWrapp = styled.section`
       display: flex;
       justify-Content: space-between;
     }
-
-    .upl-img input{
-      
+    .form-size{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+    .size-edit{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 2rem;
+
+      input type[checkbox]{
+        display: flex;
+        gap: 10px;
+        color: red;
+        background-color: yellow;
+      }
+    }
+
 `
 export default NewProduct
