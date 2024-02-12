@@ -4,9 +4,6 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-
-
-
 const initialState = {
   isLoading: false,
   isError: false,
