@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Button } from '../../styles/Button'
 import axios from 'axios';
 
+
 function NewProduct() {
   let inlData = {
     name: '',
@@ -19,7 +20,7 @@ function NewProduct() {
   }
 
   const [formdata, setFormData] = useState(inlData);
-  // const [image, setImage] = useState(null)
+  const [image, setImage] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,37 +30,58 @@ function NewProduct() {
       "Content-Type": "application/json"
     }
 
-    let bodyContent = JSON.stringify({
-      "name": formdata.name,
-      "price": formdata.price,
-      //  "image": image.image,
-      "category": formdata.category,
-      "descriptions": formdata.productDescription,
-      "featured": formdata.featureProduct,
-      "stock": formdata.stock,
-      "company": formdata.company,
-      "colors": formdata.color,
-      "size": formdata.size
-    });
+    const imgData = new FormData()
+    imgData.append("file", image[0])
+    imgData.append("upload_preset", 'upload')
+    axios.post(import.meta.env.VITE_APP_IMAGE_CLOUD, imgData, {
+      headers: {
+        "Content-Type": "mutipart/form-data"
+      }
+    })
+      .then((res) => {
+        let bodyContent = JSON.stringify({
+          "name": formdata.name,
+          "price": formdata.price,
+          "image": res.data.secure_url,
+          "category": formdata.category,
+          "descriptions": formdata.productDescription,
+          "featured": formdata.featureProduct,
+          "stock": formdata.stock,
+          "company": formdata.company,
+          "colors": formdata.color,
+          "size": formdata.size
+        });
 
-    let reqOptions = {
-      url: "http://localhost:8000/api/prodcuts/create",
-      method: "POST",
-      headers: headersList,
-      data: bodyContent,
-    }
-
-    try {
-      let res = await axios.request(reqOptions)
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
-    }
+        let reqOptions = {
+          url: "http://localhost:8000/api/prodcuts/create",
+          method: "POST",
+          headers: headersList,
+          data: bodyContent,
+        }
+        axios.request(reqOptions)
+          .then((res) => res.data)
+          .catch((error) => {
+            console.log(error);
+          })
+      })
   }
+
 
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.id]: e.target.value })
   }
+
+  const handleColorChange = (e) =>{
+    let a = e.target.value
+    setFormData({...formdata, ["color"]: a.split(", ")})
+  }
+
+  const handleSizeChange = (e) => {
+    let b = e.target.value
+    setFormData({...formdata, ["size"]: b.split(", ")})
+  }
+
+  console.log(formdata)
 
   return (
     <NewWrapp>
@@ -106,7 +128,7 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="company">Company: </label>
-              <select name="" id="company" required onChange={handleChange}>
+              <select value="" name="" id="company" required onChange={handleChange}>
                 <option value="Adidas">Adidas</option>
                 <option value="Nike">Nike</option>
                 <option value="Reebok">Reebok</option>
@@ -120,20 +142,16 @@ function NewProduct() {
               <input className='input' type="number" name="" id="stock" onChange={handleChange} />
             </div>
 
-            <div className='form-arg checkbox'>
+            {/* color */}
+            <div className='form-arg'>
               <label htmlFor="colors">Colors: </label>
-              <input className='input' type="text" name="" id="colors" onChange={handleChange} />
+              <input className='input' type="text" name="" id="colors" onChange={handleColorChange} />
             </div>
 
+            {/* size */}
             <div className='form-size'>
               <label htmlFor="size">Sizes: </label>
-              <div className='size-edit'>
-                6<input type="checkbox" name="" id="size" onChange={handleChange} />
-                7<input type="checkbox" name="" id="size" onChange={handleChange} />
-                8<input type="checkbox" name="" id="size" onChange={handleChange} />
-                9<input type="checkbox" name="" id="size" onChange={handleChange} />
-                10<input type="checkbox" name="" id="size" onChange={handleChange} />
-              </div>
+              <input className='input' type="text" name="" id="size" onChange={handleSizeChange} />
             </div>
 
             <div className='form-arg upl-img'>

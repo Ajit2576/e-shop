@@ -18,7 +18,7 @@ function Nav() {
             <NavLink to="/" className="navbar-link" onClick={() => setMenuIcon(false)}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/products" className="navbar-link" onClick={() => setMenuIcon(false)}>Products</NavLink>
+            <NavLink   to="/products" className="navbar-link" onClick={() => setMenuIcon(false)}>Products</NavLink>
           </li>
           <li>
             <NavLink to="/about" className="navbar-link" onClick={() => setMenuIcon(false)}>About</NavLink>
@@ -52,6 +52,11 @@ const NavC = styled.nav`
   display: flex;
   gap: 4.8rem;
   align-items: center;
+
+  
+  .text{
+  color: red;
+}
 
   .navbar-link {
     &:link,

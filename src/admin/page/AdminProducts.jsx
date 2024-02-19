@@ -21,7 +21,6 @@ function AdminProducts() {
         <h3>Listed Products</h3>
       </div>
       </Container>
-      
     </Product>
   )
 }
