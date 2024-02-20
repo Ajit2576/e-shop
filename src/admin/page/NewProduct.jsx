@@ -59,7 +59,7 @@ function NewProduct() {
           data: bodyContent,
         }
         axios.request(reqOptions)
-          .then((res) =>{
+          .then((res) => {
             toast.success("Sucessfully Upload")
             setFormData(inlData)
           })
@@ -67,20 +67,20 @@ function NewProduct() {
             console.log(error);
           })
       })
-    }
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.id]: e.target.value })
   }
 
-  const handleColorChange = (e) =>{
+  const handleColorChange = (e) => {
     let a = e.target.value
-    setFormData({...formdata, ["color"]: a.split(", ")})
+    setFormData({ ...formdata, ["color"]: a.split(", ") })
   }
 
   const handleSizeChange = (e) => {
     let b = e.target.value
-    setFormData({...formdata, ["size"]: b.split(", ")})
+    setFormData({ ...formdata, ["size"]: b.split(", ") })
   }
 
   return (
@@ -149,7 +149,7 @@ function NewProduct() {
 
             <div className='form-arg upl-img'>
               <label htmlFor="productImage">Upload Product Image: </label>
-              <input className='input' type="file" name="" value={formdata.productImage} id="productImage" onChange={e => setImage(e.target.files)} />
+              <input className='input' type="file" name="" id="productImage" onChange={e => setImage(e.target.files)} />
             </div>
 
             <Button style={{ borderRadius: '1rem' }} type='submit'>add product</Button>
