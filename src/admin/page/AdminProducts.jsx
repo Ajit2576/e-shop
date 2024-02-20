@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../styles/Button';
 import { NavLink } from 'react-router-dom';
-import { Container } from '../../styles/Container'
+import { Container } from '../../styles/Container';
+import { useProductContext } from '../../context/productcontex';
 
 function AdminProducts() {
+
+  const { featureProducts } = useProductContext();
+  console.log(featureProducts);
+
   return (
     <Product>
       <div className="product-section">

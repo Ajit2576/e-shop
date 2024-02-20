@@ -114,6 +114,11 @@ const Wrapper = styled.section`
   .product_images {
     display: flex;
     align-items: center;
+
+    img{
+      height: 70vh;
+      width: 40vw;
+    }
   }
 
   .product-data {

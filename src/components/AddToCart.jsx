@@ -85,7 +85,7 @@ const Wrapper = styled.section`
     background-color: #000;
     border-radius: 50%;
     margin-left: 1rem;
-    border: 1px solid;
+    border: 1px solid #000;
     outline: none;
     opacity: 0.5;
     cursor: pointer;

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from '../../styles/Button'
 import axios from 'axios';
+import { toast } from 'sonner';
 
 
 function NewProduct() {
@@ -59,13 +60,27 @@ function NewProduct() {
           data: bodyContent,
         }
         axios.request(reqOptions)
-          .then((res) => res.data)
+          .then((res) =>{
+            toast.success("Sucessfully Upload")
+
+            // setFormData({
+            //   name : "",
+            //   price : "",
+            //   image : "",
+            //   category : "",
+            //   descriptions : "",
+            //   featured : "",
+            //   stock : "",
+            //   company : "",
+            //   colors : "",
+            //   size : ""
+            // })
+          })
           .catch((error) => {
             console.log(error);
           })
       })
-  }
-
+    }
 
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.id]: e.target.value })
@@ -80,8 +95,6 @@ function NewProduct() {
     let b = e.target.value
     setFormData({...formdata, ["size"]: b.split(", ")})
   }
-
-  console.log(formdata)
 
   return (
     <NewWrapp>
@@ -100,18 +113,13 @@ function NewProduct() {
             </div>
 
             <div className='form-arg'>
-              <label htmlFor="discountPrice">Discount Percentage: </label>
-              <input className='input' type="number" name="" id="discountPrice" onChange={handleChange} />
-            </div>
-
-            <div className='form-arg'>
               <label htmlFor="productDescription">Enter Product Description: </label>
               <textarea name="" id="productDescription" cols={22} required onChange={handleChange} ></textarea>
             </div>
 
             <div className='form-arg'>
               <label htmlFor="category">Select Category: </label>
-              <select name="" id="category" required onChange={handleChange}>
+              <select id="category" required onChange={handleChange}>
                 <option value="mens">Mens</option>
                 <option value="womens">Womens</option>
                 <option value="kids">Kids</option>
@@ -128,7 +136,7 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="company">Company: </label>
-              <select value="" name="" id="company" required onChange={handleChange}>
+              <select id="company" required onChange={handleChange}>
                 <option value="Adidas">Adidas</option>
                 <option value="Nike">Nike</option>
                 <option value="Reebok">Reebok</option>
@@ -142,13 +150,11 @@ function NewProduct() {
               <input className='input' type="number" name="" id="stock" onChange={handleChange} />
             </div>
 
-            {/* color */}
             <div className='form-arg'>
               <label htmlFor="colors">Colors: </label>
               <input className='input' type="text" name="" id="colors" onChange={handleColorChange} />
             </div>
 
-            {/* size */}
             <div className='form-size'>
               <label htmlFor="size">Sizes: </label>
               <input className='input' type="text" name="" id="size" onChange={handleSizeChange} />
@@ -183,6 +189,10 @@ const NewWrapp = styled.section`
     .new-pro-box{
       max-width: 80vw;
       margin: auto;
+    }
+
+    input, textarea{
+      text-transform: capitalize;
     }
 
     .data-input{

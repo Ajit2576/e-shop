@@ -21,7 +21,7 @@ const CartItem = ({ id, name, image, color, price, amount, selectSize }) => {
             <p>color:</p>
             <div
               className="color-style"
-              style={{ backgroundColor: color, color: color }}></div>
+              style={{ backgroundColor: color, color: color, border:'1px solid black' }}></div>
           </div>
           <div className="color-div">
             <p>Size:</p>
