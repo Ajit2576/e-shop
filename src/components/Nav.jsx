@@ -33,7 +33,7 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/login'>
+            <NavLink to='/login'  onClick={() => setMenuIcon(false)}>
               <Button className='login-btn'>Login</Button>
             </NavLink>
           </li>
