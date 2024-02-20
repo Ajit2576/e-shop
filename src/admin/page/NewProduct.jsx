@@ -9,11 +9,10 @@ function NewProduct() {
   let inlData = {
     name: '',
     price: '',
-    discountPrice: '',
     productDescription: '',
-    category: '',
-    featureProduct: '',
-    company: '',
+    category: 'mens',
+    featureProduct: false,
+    company: 'Adidas',
     stock: '',
     productImage: '',
     size: '',
@@ -62,19 +61,7 @@ function NewProduct() {
         axios.request(reqOptions)
           .then((res) =>{
             toast.success("Sucessfully Upload")
-
-            // setFormData({
-            //   name : "",
-            //   price : "",
-            //   image : "",
-            //   category : "",
-            //   descriptions : "",
-            //   featured : "",
-            //   stock : "",
-            //   company : "",
-            //   colors : "",
-            //   size : ""
-            // })
+            setFormData(inlData)
           })
           .catch((error) => {
             console.log(error);
@@ -104,22 +91,22 @@ function NewProduct() {
           <form action="" className='data-input' onSubmit={handleSubmit}>
             <div className='form-arg'>
               <label htmlFor="name">Enter Product Name: </label>
-              <input className='input' type="text" name="" id="name" required onChange={handleChange} />
+              <input className='input' type="text" name="" value={formdata.name} id="name" required onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
               <label htmlFor="price">Enter Product Price: </label>
-              <input className='input' type="number" name="" id="price" required onChange={handleChange} />
+              <input className='input' type="number" name="" value={formdata.price} id="price" required onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
               <label htmlFor="productDescription">Enter Product Description: </label>
-              <textarea name="" id="productDescription" cols={22} required onChange={handleChange} ></textarea>
+              <textarea name="" value={formdata.productDescription} id="productDescription" cols={22} required onChange={handleChange} ></textarea>
             </div>
 
             <div className='form-arg'>
               <label htmlFor="category">Select Category: </label>
-              <select id="category" required onChange={handleChange}>
+              <select value={formdata.category} id="category" required onChange={handleChange}>
                 <option value="mens">Mens</option>
                 <option value="womens">Womens</option>
                 <option value="kids">Kids</option>
@@ -128,7 +115,7 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="featureProduct">Feature Product: </label>
-              <select name="" id="featureProduct" required onChange={handleChange}>
+              <select value={formdata.featureProduct} name="" id="featureProduct" required onChange={handleChange}>
                 <option value={false}>No</option>
                 <option value={true}>Yes</option>
               </select>
@@ -136,7 +123,7 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="company">Company: </label>
-              <select id="company" required onChange={handleChange}>
+              <select value={formdata.company} id="company" required onChange={handleChange}>
                 <option value="Adidas">Adidas</option>
                 <option value="Nike">Nike</option>
                 <option value="Reebok">Reebok</option>
@@ -147,22 +134,22 @@ function NewProduct() {
 
             <div className='form-arg'>
               <label htmlFor="stock">Stocks: </label>
-              <input className='input' type="number" name="" id="stock" onChange={handleChange} />
+              <input className='input' type="number" name="" value={formdata.stock} id="stock" onChange={handleChange} />
             </div>
 
             <div className='form-arg'>
               <label htmlFor="colors">Colors: </label>
-              <input className='input' type="text" name="" id="colors" onChange={handleColorChange} />
+              <input className='input' type="text" name="" value={formdata.color} id="colors" onChange={handleColorChange} />
             </div>
 
             <div className='form-size'>
               <label htmlFor="size">Sizes: </label>
-              <input className='input' type="text" name="" id="size" onChange={handleSizeChange} />
+              <input className='input' type="text" name="" value={formdata.size} id="size" onChange={handleSizeChange} />
             </div>
 
             <div className='form-arg upl-img'>
               <label htmlFor="productImage">Upload Product Image: </label>
-              <input className='input' type="file" name="" id="productImage" onChange={e => setImage(e.target.files)} />
+              <input className='input' type="file" name="" value={formdata.productImage} id="productImage" onChange={e => setImage(e.target.files)} />
             </div>
 
             <Button style={{ borderRadius: '1rem' }} type='submit'>add product</Button>
