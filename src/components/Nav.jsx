@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { Button } from '../styles/Button';
 import { useCartContext } from "../context/cart_context";
+import User from './User';
 
 function Nav() {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
+
+  const location = useLocation()
 
   return (
     <NavC>
@@ -36,6 +39,7 @@ function Nav() {
             <NavLink to='/login'  onClick={() => setMenuIcon(false)}>
               <Button className='login-btn'>Login</Button>
             </NavLink>
+            {/* <User/> */}
           </li>
         </ul>
         <div className="mobile-navbar-btn">
@@ -52,11 +56,10 @@ const NavC = styled.nav`
   display: flex;
   gap: 4.8rem;
   align-items: center;
-
   
   .text{
-  color: red;
-}
+    color: red;
+  }
 
   .navbar-link {
     &:link,

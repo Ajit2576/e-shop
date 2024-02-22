@@ -17,7 +17,7 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(null)
-  console.log(totalPages)
+
   
   // const API = `https://shop-api-black-nu.vercel.app/api/prodcuts/get-all?page=${page}`;
   const API = `http://localhost:8000/api/prodcuts/get-all?page=${page}`;
